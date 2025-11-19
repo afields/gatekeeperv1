@@ -1,0 +1,9 @@
+spring:
+  application:
+    name: gatekeeperv1
+
+management:
+  endpoints:
+    web:
+      exposure:
+        include: health,metrics,prometheus

@@ -1,0 +1,21 @@
+syntax = "proto3";
+
+package gkv1;
+
+option java_multiple_files = true;
+option java_package = "gatekeeper.gkv1.proto";
+option java_outer_classname = "Gkv1Proto";
+
+service Gkv1Service {
+	rpc CheckRateLimit(CheckRateLimitRequest) returns (CheckRateLimitResponse);
+}
+
+message CheckRateLimitRequest {
+	string client_id = 1;
+	string strategy = 2;
+}
+
+message CheckRateLimitResponse {
+    bool allowed = 1;
+    string message = 2;
+}
